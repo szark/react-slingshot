@@ -18,14 +18,14 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - run: npm audit
-      
+
 
 workflows:
   version: 2.1
   ci_pipeline:
     jobs:
       - build
-      - test
+      - test:
           requires:
             - build
       - analyze:
